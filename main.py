@@ -2,7 +2,7 @@
 # BSIT - IT1R2                                           Finals PIT
 # Flashcard Quiz App Tkinter
 
-import tkinter as tk
+import tkinter as tk # this is the essential line iykyk :)
 from tkinter import messagebox
 
 # --- APPLICATION CONCEPTS: Functions, Arguments, Return Values, File Handling, Error Handling ---
@@ -23,7 +23,7 @@ def load_flashcards(filename):
     except FileNotFoundError:
         # Error Handling (try-except) Requirement
         messagebox.showwarning("File Missing", f"{filename} not found. Loading backup cards.")
-        # Fallback data so the app doesn't crash
+        # This is just for backup incase my notepad file doesn't work (scary)
         cards = [
             {"question": "What is 2 + 2?", "answer": "4"},
             {"question": "Is Python a programming language? (yes/no)", "answer": "yes"}
@@ -59,23 +59,29 @@ def main():
 
     # Initialize the main window
     window = tk.Tk()
-    window.title("IT121 Flashcard Quiz")
-    window.geometry("450x350")
+    window.title("IT121 Flashcard Quiz by Alberca")
+    window.geometry("500x400")
     window.config(padx=20, pady=20)
 
     # --- WIDGETS (Proper use of Labels, Entries, Buttons) ---
     
-    score_label = tk.Label(window, text="Score: 0", font=("Arial", 12, "bold"))
+    tk.Label(window, text="Welcome to Beginner Level", font=("Arial", 12), fg="blue").pack()
+    tk.Label(window, text="Flashcard Quiz App", font=("Arial", 18, "bold"), fg="purple").pack()
+    tk.Label(window, text="by Kent Moody!", font=("Arial", 12), fg="blue").pack()
+
+    score_label = tk.Label(window, text="Score: 0", font=("Lobster", 12, "bold"))
     score_label.pack(anchor="e")
 
-    question_label = tk.Label(window, text="Question will appear here", font=("Arial", 14), wraplength=400, height=3)
+    question_label = tk.Label(window, text="Question will appear here", font=("Lobster", 14), wraplength=400, height=3)
     question_label.pack(pady=15)
 
-    answer_entry = tk.Entry(window, font=("Arial", 14), width=20)
+    answer_entry = tk.Entry(window, font=("Lobster", 14), width=20)
     answer_entry.pack(pady=10)
 
-    hint_label = tk.Label(window, text="", font=("Arial", 10, "italic"), fg="gray")
+    hint_label = tk.Label(window, text="", font=("Lobster", 10, "italic"), fg="gray")
     hint_label.pack(pady=5)
+
+    tk.Label(window, text="Click the purple button to submit or maybe you need hint, press blue!", font=("Arial", 9), bg="white", fg="purple").pack()
 
     # --- BUTTON COMMANDS ---
 
@@ -112,7 +118,7 @@ def main():
         if is_correct:
             app_state["score"] += 1
             score_label.config(text=f"Score: {app_state['score']}")
-            messagebox.showinfo("Result", "Correct! Good job.")
+            messagebox.showinfo("Result", "Correct! Good job, Moody, or whoever you are. Now to the next one!")
         else:
             messagebox.showerror("Result", f"Incorrect. The correct answer was: {current_card['answer']}")
 
@@ -135,10 +141,10 @@ def main():
     button_frame = tk.Frame(window)
     button_frame.pack(pady=10)
 
-    submit_button = tk.Button(button_frame, text="Submit Answer", command=submit_clicked, bg="green", fg="white", font=("Arial", 12))
+    submit_button = tk.Button(button_frame, text="Submit Answer if you're ready", command=submit_clicked, bg="purple", fg="white", font=("Arial", 12))
     submit_button.grid(row=0, column=0, padx=10)
 
-    hint_button = tk.Button(button_frame, text="Get Hint", command=hint_clicked, bg="orange", fg="black", font=("Arial", 12))
+    hint_button = tk.Button(button_frame, text="Hint or you got this?", command=hint_clicked, bg="blue", fg="white", font=("Arial", 12))
     hint_button.grid(row=0, column=1, padx=10)
 
     # Start the application by loading the very first card
