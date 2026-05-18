@@ -1,6 +1,6 @@
 What keyword is used to define a function in Python?|def
 Which data type is used to store True or False?|boolean
-What symbol is used for comments in Python?|#
+What symbol is used for comments in Python? (You used this A LOT to guide you in your system)|#
 What function is used to output text to the screen?|print
 What is the index of the first element in a list?|0
 Who is your instructor for IT121?|Aillen Gonzaga
