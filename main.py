@@ -138,7 +138,6 @@ def main():
     # --- LAYOUT (Proper use of pack and grid) ---
     
     # We use a Frame so we can put the two buttons side-by-side using 'grid', 
-    # while the rest of the app uses 'pack'. This shows you know how to use both!
     button_frame = tk.Frame(window)
     button_frame.pack(pady=10)
 
