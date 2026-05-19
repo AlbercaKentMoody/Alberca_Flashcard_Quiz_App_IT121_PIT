@@ -5,6 +5,7 @@
 import tkinter as tk # this is the essential line iykyk :)
 from tkinter import messagebox
 
+
 # --- APPLICATION CONCEPTS: Functions, Arguments, Return Values, File Handling, Error Handling ---
 
 def load_flashcards(filename):
@@ -60,14 +61,14 @@ def main():
     # Initialize the main window
     window = tk.Tk()
     window.title("IT121 Flashcard Quiz by Alberca")
-    window.geometry("500x400")
+    window.geometry("500x500")
     window.config(padx=20, pady=20)
 
     # --- WIDGETS (Proper use of Labels, Entries, Buttons) ---
     
-    tk.Label(window, text="Welcome to Beginner Level", font=("Arial", 12), fg="blue").pack()
-    tk.Label(window, text="Flashcard Quiz App", font=("Arial", 18, "bold"), fg="purple").pack()
-    tk.Label(window, text="by Kent Moody!", font=("Arial", 12), fg="blue").pack()
+    tk.Label(window, text="Welcome to Beginner Level", font=("Arial", 14), fg="blue").pack()
+    tk.Label(window, text="Flashcard Quiz App", font=("Arial", 30, "bold"), fg="purple").pack()
+    tk.Label(window, text="by Kent Moody!", font=("Arial", 14), fg="blue").pack()
 
     score_label = tk.Label(window, text="Score: 0", font=("Lobster", 12, "bold"))
     score_label.pack(anchor="e")
